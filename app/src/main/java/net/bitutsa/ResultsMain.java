@@ -1,10 +1,7 @@
 package net.bitutsa;
 
-import android.app.AlertDialog;
-import android.content.DialogInterface;
-import android.content.Intent;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -13,22 +10,24 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
-public class MainActivity extends ActionBarActivity {
-
-    private String[] ulkeler =
-            {"SONUÇLAR", "TAHMİN ÜRET"};
+/**
+ * Created by eren on 22/09/15.
+ */
+public class ResultsMain extends ActionBarActivity {
+    private String[] cekilisler =
+            {"MILLI PIYANGO", "SAYISAL LOTO", "SANS TOPU"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.resultsmain);
 
         //(A) adımı
-        ListView listemiz=(ListView) findViewById(R.id.lvMain);
+        ListView listemiz=(ListView) findViewById(R.id.lvResultsMain);
 
         //(B) adımı
         ArrayAdapter<String> veriAdaptoru=new ArrayAdapter<String>
-                (this, android.R.layout.simple_list_item_1, android.R.id.text1, ulkeler);
+                (this, android.R.layout.simple_list_item_1, android.R.id.text1, cekilisler);
 
         //(C) adımı
         listemiz.setAdapter(veriAdaptoru);
@@ -38,13 +37,11 @@ public class MainActivity extends ActionBarActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position,
                                     long id) {
-
+                Toast.makeText(getApplicationContext(), Integer.toString(position), Toast.LENGTH_SHORT).show();
                 if (position==0){
-                    Intent intent = new Intent(MainActivity.this, ResultsMain.class);
-                    startActivity(intent);
 
                 }else if (position==1){
-                    Toast.makeText(getApplicationContext(), "DAHA OLUSTURMADIN", Toast.LENGTH_SHORT).show();
+
                 }
             }
         });
