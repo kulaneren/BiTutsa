@@ -14,20 +14,26 @@ import android.widget.Toast;
  * Created by eren on 22/09/15.
  */
 public class ResultsMain extends ActionBarActivity {
-    private String[] cekilisler =
-            {"MILLI PIYANGO", "SAYISAL LOTO", "SANS TOPU"};
+    private String[] games;
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.resultsmain);
 
+        for (int i =0; i<=4;i++){
+            games[i]= "@string/game"+ Integer.toString(i);
+        }
+
         //(A) adımı
         ListView listemiz=(ListView) findViewById(R.id.lvResultsMain);
 
         //(B) adımı
         ArrayAdapter<String> veriAdaptoru=new ArrayAdapter<String>
-                (this, android.R.layout.simple_list_item_1, android.R.id.text1, cekilisler);
+                (this, android.R.layout.simple_list_item_1, android.R.id.text1, games);
 
         //(C) adımı
         listemiz.setAdapter(veriAdaptoru);
@@ -37,11 +43,36 @@ public class ResultsMain extends ActionBarActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position,
                                     long id) {
-                Toast.makeText(getApplicationContext(), Integer.toString(position), Toast.LENGTH_SHORT).show();
+
+                switch (position) {
+                    case 0 :
+                        Toast.makeText(getApplicationContext(), Integer.toString(position), Toast.LENGTH_SHORT).show();
+                        break;
+                    case 1 :
+                        Toast.makeText(getApplicationContext(), Integer.toString(position), Toast.LENGTH_SHORT).show();
+                        break;
+
+                    case 2 :
+                        Toast.makeText(getApplicationContext(), Integer.toString(position), Toast.LENGTH_SHORT).show();
+                        break;
+
+                    case 3 :
+                        Toast.makeText(getApplicationContext(), Integer.toString(position), Toast.LENGTH_SHORT).show();
+                        break;
+
+                    case 4 :
+                        Toast.makeText(getApplicationContext(), Integer.toString(position), Toast.LENGTH_SHORT).show();
+                        break;
+
+                    default :
+                        Toast.makeText(getApplicationContext(), "yok oyle bir sey", Toast.LENGTH_SHORT).show();
+                        break;
+                }
+
                 if (position==0){
-
+                    Toast.makeText(getApplicationContext(), Integer.toString(position), Toast.LENGTH_SHORT).show();
                 }else if (position==1){
-
+                    Toast.makeText(getApplicationContext(), Integer.toString(position), Toast.LENGTH_SHORT).show();
                 }
             }
         });

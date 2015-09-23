@@ -3,4 +3,11 @@
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <!-- games -->
+    <string name="game0">Milli Piyango</string>
+    <string name="game1">On Numara</string>
+    <string name="game2">Şans Topu</string>
+    <string name="game3">Süper Loto</string>
+    <string name="game4">Sayısal Loto</string>
+    <!-- !games!-->
 </resources>
