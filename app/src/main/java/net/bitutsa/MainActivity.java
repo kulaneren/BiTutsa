@@ -40,11 +40,14 @@ public class MainActivity extends ActionBarActivity {
                                     long id) {
 
                 if (position==0){
-                    Intent intent = new Intent(MainActivity.this, ResultsMain.class);
+                    Intent intent = new Intent(MainActivity.this, SansOyunlariMain.class);
+                    intent.putExtra("islem",0);
                     startActivity(intent);
 
                 }else if (position==1){
-                    Toast.makeText(getApplicationContext(), "DAHA OLUSTURMADIN", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(MainActivity.this, SansOyunlariMain.class);
+                    intent.putExtra("islem",1);
+                    startActivity(intent);
                 }
             }
         });

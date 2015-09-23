@@ -21,6 +21,12 @@
             android:parentActivityName="net.bitutsa.MainActivity">
 
         </activity>
+
+        <activity android:name=".SansOyunlariMain"
+            android:label="ŞANS OYUNLARI"
+            android:parentActivityName="net.bitutsa.MainActivity">
+
+        </activity>
     </application>
 
 </manifest>
